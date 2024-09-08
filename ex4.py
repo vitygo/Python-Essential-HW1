@@ -6,7 +6,7 @@ class CarSalon:
         self.cars = []
     
     def __str__(self) -> str:
-        cars_string = '\n'.join([str(car) for car in self.cars])
+        cars_string = '\n'.join(self.cars)
 
         return (
             f"{Fore.RED}Автосалон {self.name}{Style.RESET_ALL}\n"
@@ -30,7 +30,7 @@ class CarSalon:
         elif user_choice == 2:
             print(f"{self.cars[1]} Продано!")
             del self.cars[1]
-        avaliable_cars = '\n'.join([str(car) for car in self.cars])
+        avaliable_cars = '\n'.join(self.cars)
         print(avaliable_cars)
         
 
