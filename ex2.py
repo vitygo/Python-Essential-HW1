@@ -15,13 +15,6 @@ class Book:
                 f"Year: {self.year} \n"
                 f"Genre: {self.genre} \n\n"
                 f"Reviews:\n{reviews_string}")
-    
-    # def show_reviews(self):
-    #     if self.reviews:
-    #         for review in self.reviews:
-    #             return(review[])
-    #     else:
-    #         return "No reviews avalible for this book!"
 
     def add_review(self, review:str, user_name:str='Unknown User'):
         self.reviews.append(f"{Fore.RED}Користувач{Style.RESET_ALL} {Fore.YELLOW}{user_name}{Style.RESET_ALL}: {review}")
