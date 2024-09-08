@@ -9,7 +9,11 @@ class Book:
         self.reviews = []
 
     def __str__(self) -> str:
-        reviews_string = '\n'.join(self.reviews)
+        if self.reviews:
+            reviews_string = '\n'.join(self.reviews)
+        else:
+            reviews_string = f'NO AVALIABLE REVIEWES FOR "{self.title}" BOOK!'
+
         return (f"Title: {self.title} \n"
                 f"Author: {self.author}\n" 
                 f"Year: {self.year} \n"
@@ -33,3 +37,5 @@ book1.add_review(review='Класно!')
 
 
 print(book1)
+print()
+print(book2)
