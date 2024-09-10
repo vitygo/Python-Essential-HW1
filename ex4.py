@@ -6,35 +6,15 @@ class CarSalon:
         self.cars = []
     
     def __str__(self) -> str:
-        cars_string = '\n'.join(self.cars)
-
-        return (
-            f"{Fore.RED}Автосалон {self.name}{Style.RESET_ALL}\n"
-            f"{Fore.YELLOW}Машини автосалону:{Style.RESET_ALL}\n"
-            f"{Fore.GREEN}{cars_string}{Style.RESET_ALL}"
-        )
+        ...
 
     def add_car(self, car:"Car"):
-        print(f"Нова Машина в салоні {self.name} {car.model}, {car.year}року, Вартістю ${car.price}")
-        self.cars.append(str(car))
+        ...
 
     def sell_car(self):
-        print(
-            f"'1' {self.cars[0]}"
-            f"'2' {self.cars[1]}"
-        )
-        user_choice = int(input("Оберіть Автомобіль: "))
-        if user_choice == 1:
-            print(f"{self.cars[0]} Продано!")
-            del self.cars[0]
-        elif user_choice == 2:
-            print(f"{self.cars[1]} Продано!")
-            del self.cars[1]
-        avaliable_cars = '\n'.join(self.cars)
-        print(avaliable_cars)
+        ...
         
 
-        
 
 class Car:
     def __init__(self, model:str, year:int, price:int):

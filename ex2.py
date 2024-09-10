@@ -11,7 +11,6 @@ class Book:
                 f"Author: {self.author}\n" 
                 f"Year: {self.year} \n"
                 f"Genre: {self.genre} \n"
-                f"\nВідгуки:"
                 )
 
     def add_review(self, review):
@@ -19,6 +18,7 @@ class Book:
 
     def show_reviews(self): #новий метод виводу review
         if self.reviews:
+            print('Reviews: ')
             for review in self.reviews:
                 print(review)
         else:
