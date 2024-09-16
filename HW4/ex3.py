@@ -2,8 +2,8 @@ class IncreasSalaryError(Exception):
     pass
 
 class Employee:
-    employees = []
-    def __init__(self, name:str, age:int, position:str, start_year:int, salary:int):
+    employees: list = []
+    def __init__(self, name:str, age:int, position:str, start_year:int, salary:int) -> None:
         if not name.isalpha():
             raise ValueError("Ім'я повинно містити лише літери")
         if not position:
@@ -19,7 +19,7 @@ class Employee:
         Employee.employees.append(self)
         
     
-    def __str__(self):
+    def __str__(self) -> str:
         return (f"Імя: {self.name}\n"
                 f"Вік: {self.age}\n"
                 f"Позиція: {self.position}\n"
@@ -27,7 +27,7 @@ class Employee:
                 f"Зарплата: ${self.salary}.\n"
                 f"Зарплата в гривнях: UAH{self.usd_to_uah(self.salary)}")
 
-    def increas_salary(self):
+    def increas_salary(self) -> None:
         print(self.salary)
         try:
             amount = int(input("на скільки збільшити зарплату?: "))
