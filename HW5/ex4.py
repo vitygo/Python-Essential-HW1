@@ -2,7 +2,7 @@ from ex2 import *
 
 # Створюємо два екземпляри кожного класу
 contact_1 = Contact("Serhiy", "Zhadan", 50, 123456789, "Zhadan@gmail.com")
-contact_2 = Contact("Oksana", "Bilozir", 45, 234567890, "Bilozir@gmail.com")
+contact_2 = Contact("Oksana", "Zabuzhko", 63, 234567890, "Zabuzhko@gmail.com")
 
 update_contact_1 = UpdateContact("Taras", "Shevchenko", 210, 987654321, "kobzar@gmail.com", "writer")
 update_contact_2 = UpdateContact("Lesya", "Ukrainka", 150, 876543210, "ukrainka@gmail.com", "poetess")
