@@ -6,7 +6,7 @@ products = {
 
 
 class StoreIter:
-    def __init__(self, data):
+    def __init__(self, data:dict):
         self.data = data
         self.category = data.keys()
     
@@ -16,7 +16,7 @@ class StoreIter:
         return self
     
     def __next__(self):
-        
+
         for category in self.category:
 
             return self.data[category]
