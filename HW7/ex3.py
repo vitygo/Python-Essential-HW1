@@ -1,5 +1,5 @@
 
-def prime_numbers(n):
+def prime_numbers(n:int):
     for num in range(2, n):
         if num > 1:
             for i in range(2, num):
