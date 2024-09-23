@@ -3,6 +3,7 @@ class Library:
         self.name: str = name
         self.authors: list = []
         self.library_info: int = self.info()
+        self._current_author = 0  # Для ітерації по авторам
 
     def info(self):
         print(f"У бібліотеці {len(self.authors)} авторів "
@@ -17,14 +18,24 @@ class Library:
     def add_author(self, author: "Author"):
         self.authors.append(author)
 
-    def __iter__(self):  # Ітератор для бібліотеки
-        return iter(self.authors)
+    def __iter__(self):  
+        self._current_author = 0
+        return self
+    
+    def __next__(self):
+        if self._current_author < len(self.authors):
+            current = self.authors[self._current_author]
+            self._current_author += 1
+            return current
+        else:
+            raise StopIteration
 
 
 class Author:
     def __init__(self, name: str):
         self.name = name
         self.books: list = []
+        self._current_book = 0  # Для ітерації по книгах
 
     def __str__(self) -> str:
         return f"Автор: {self.name}"
@@ -34,7 +45,16 @@ class Author:
             print(book, end="\n\n")
 
     def __iter__(self):  # Ітератор для книг автора
-        return iter(self.books)
+        self._current_book = 0
+        return self
+
+    def __next__(self):
+        if self._current_book < len(self.books):
+            current_book = self.books[self._current_book]
+            self._current_book += 1
+            return current_book
+        else:
+            raise StopIteration  
 
 
 class Book:
